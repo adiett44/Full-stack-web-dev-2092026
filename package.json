@@ -1,0 +1,24 @@
+{
+  "name": "full-stack-web-dev-2092026",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adiett44/Full-stack-web-dev-2092026.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adiett44/Full-stack-web-dev-2092026/issues"
+  },
+  "homepage": "https://github.com/adiett44/Full-stack-web-dev-2092026#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.5",
+    "tailwindcss": "^4.3.5"
+  }
+}

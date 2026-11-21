@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TurboDL - yt-dlp + aria2c UI</title>
+    <!-- Tailwind CSS Output File Link -->
+    <link rel="stylesheet" href="../../src/output.css">
+</head>
+
+<body class="bg-neutral-700 text-gray-800 font-sans">
+
+    <!-- ==================== 1. FLOATING NAVBAR ==================== -->
+    <header
+        class="fixed top-4 left-1/2 -translate-x-1/2 z-10 flex items-center justify-between w-[92%] max-w-fit px-4 py-3 sm:px-8 sm:py-5 rounded-[35px] border-b border-black bg-cyan-200/85 uppercase shadow-lg">
+        <nav class="text-center">
+            <ul class="flex flex-wrap justify-center gap-1.5 sm:gap-2.5">
+                <li>
+                    <a href="#"
+                        class="text-black font-semibold px-3 py-3 rounded-[15px] whitespace-nowrap hover:bg-black/25 transition">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="text-black font-semibold px-3 py-3 rounded-[15px] whitespace-nowrap hover:bg-black/25 transition">
+                        Products
+                    </a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="text-black font-semibold px-3 py-3 rounded-[15px] whitespace-nowrap hover:bg-black/25 transition">
+                        Product detail
+                    </a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="text-black font-semibold px-3 py-3 rounded-[15px] whitespace-nowrap hover:bg-black/25 transition">
+                        Contact
+                    </a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="text-black font-semibold px-3 py-3 rounded-[15px] whitespace-nowrap hover:bg-black/25 transition">
+                        Cart (0)
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ==================== 2. MAIN CONTENT AREA ==================== -->
+    <main class="max-w-4xl mx-auto px-5">
+
+        <!-- SECTION A: URL Input & Quality Form -->
+        <section class="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 mt-30">
+            <form action="" class="space-y-4">
+
+                <!-- Form Heading Label -->
+                <label for="video-url" class="block text-lg font-bold text-white">
+                    Paste Video Link
+                </label>
+
+                <!-- URL Input Box + Download Button Row -->
+                <div class="flex gap-3">
+                    <input type="url" name="url" id="video-url" placeholder="https://www.youtube.com/watch?v=..."
+                        required
+                        class="flex-1 bg-zinc-950 border border-zinc-700 text-white px-4 py-3 rounded-xl focus:outline-none focus:border-rose-500">
+
+                    <button type="submit"
+                        class="bg-rose-600 hover:bg-rose-700 text-white font-semibold px-6 py-3 rounded-xl whitespace-nowrap">
+                        Download
+                    </button>
+                </div>
+
+                <!-- Video Quality Dropdown Selector -->
+                <div class="border-b-amber-950 border-2 inline-block rounded-xl font-bold">
+                    <select name="quality" id="quality" class="bg-zinc-950 text-white px-4 py-2 rounded-lg">
+                        <option value="1080p">1080p</option>
+                        <option value="720p">720p</option>
+                        <option value="480p">480p</option>
+                        <option value="360p">360p</option>
+                    </select>
+                </div>
+
+            </form>
+        </section>
+
+        <!-- SECTION B: Active Downloads Queue -->
+        <section class="mt-8 space-y-4">
+            <h2 class="text-lg font-bold text-white">Active Downloads</h2>
+
+            <!-- Single Downloading Video Card -->
+            <article class="bg-zinc-900 border border-zinc-800 rounded-2xl p-5 flex items-center gap-5">
+
+                <!-- Left: Video Format Thumbnail -->
+                <div
+                    class="w-28 h-16 bg-zinc-800 rounded-xl flex items-center justify-center text-xs font-mono text-zinc-400 shrink-0">
+                    1080p
+                </div>
+
+                <!-- Center: Video Title, Progress Bar & Aria2c Speed -->
+                <div class="flex-1 space-y-2">
+                    <h3 class="text-white font-semibold text-sm">Linux Mint Complete Guide 2026.mp4</h3>
+
+                    <!-- Live Progress Bar -->
+                    <div class="w-full h-2 bg-zinc-800 rounded-full overflow-hidden">
+                        <div class="w-2/3 h-full bg-rose-600"></div>
+                    </div>
+
+                    <!-- Download Speed & ETA Stats -->
+                    <p class="text-xs text-zinc-400 font-mono">aria2c 16x • 14.8 MB/s • 66%</p>
+                </div>
+
+                <!-- Right: Pause / Cancel Action Button -->
+                <div>
+                    <button class="bg-zinc-800 hover:bg-zinc-700 text-xs text-zinc-300 px-3 py-1.5 rounded-lg">
+                        Pause
+                    </button>
+                </div>
+
+            </article>
+
+            <!-- Single Downloading Video Card -->
+            <article class="bg-zinc-900 border border-zinc-800 rounded-2xl p-5 flex items-center gap-5">
+
+                <!-- Left: Video Format Thumbnail -->
+                <div
+                    class="w-28 h-16 bg-zinc-800 rounded-xl flex items-center justify-center text-xs font-mono text-zinc-400 shrink-0">
+                    1080p
+                </div>
+
+                <!-- Center: Video Title, Progress Bar & Aria2c Speed -->
+                <div class="flex-1 space-y-2">
+                    <h3 class="text-white font-semibold text-sm">Linux Mint Complete Guide 2026.mp4</h3>
+
+                    <!-- Live Progress Bar -->
+                    <div class="w-full h-2 bg-zinc-800 rounded-full overflow-hidden">
+                        <div class="w-2/3 h-full bg-rose-600"></div>
+                    </div>
+
+                    <!-- Download Speed & ETA Stats -->
+                    <p class="text-xs text-zinc-400 font-mono">aria2c 16x • 14.8 MB/s • 66%</p>
+                </div>
+
+                <!-- Right: Pause / Cancel Action Button -->
+                <div>
+                    <button class="bg-zinc-800 hover:bg-zinc-700 text-xs text-zinc-300 px-3 py-1.5 rounded-lg">
+                        Pause
+                    </button>
+                </div>
+
+            </article>
+        </section>
+
+    </main>
+
+    <div
+        class="flex bg-amber-500 sm:bg-red-600 lg:bg-green-500 justify-center text-center max-w-6xl w-[92%] rounded-2xl mx-auto my-10 p-5 text-white">
+        <p class="text-sm sm:text-base break-words">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni ducimus vitae necessitatibus cupiditate odio
+            veritatis placeat assumenda, similique incidunt, officia minima omnis nobis? Aliquam molestiae eos
+            obcaecati, numquam doloremque dolore tempora non delectus corporis minus natus rerum ex a aspernatur,
+            officia aut nihil maxime! Repudiandae ex consequatur iure similique. Sequi, vel. Eaque, consectetur porro.
+            Ab rem adipisci, eum error, quod saepe voluptas quibusdam impedit, ullam ratione neque similique. Corporis
+            repellat commodi nisi, ducimus ut voluptatum laudantium recusandae consequuntur deserunt porro doloribus
+            quidem magnam itaque fugiat rem illum exercitationem blanditiis perferendis architecto vitae totam libero
+            assumenda expedita eos. Voluptates libero molestiae dolorem voluptate? Eligendi impedit mollitia est atque
+            ducimus incidunt eius, in aspernatur sunt quis similique repudiandae dolorum architecto maiores placeat.
+            Veniam explicabo at recusandae labore, harum corrupti earum. Corrupti et harum eos laborum delectus
+            temporibus exercitationem tenetur at tempore error. Illum magni dolore maiores excepturi natus aspernatur
+            dolor numquam. Delectus eius obcaecati aspernatur in sit quos corporis quidem quisquam dolor optio, eveniet
+            quia amet omnis eaque ad odio doloremque. Placeat vel deleniti nobis aperiam, explicabo quasi beatae tenetur
+            dignissimos consectetur quia possimus, suscipit voluptas fugit animi nemo! Aliquid ducimus accusantium
+            eveniet quam, odio consectetur nobis, ratione eum ab explicabo sequi in autem necessitatibus vero iste neque
+            inventore mollitia architecto repellat et. Odio ex tempore, est veritatis libero, doloremque perferendis
+            sapiente repudiandae maiores, nihil odit maxime hic quidem! Enim neque omnis deserunt excepturi optio ipsam
+            labore exercitationem illo voluptas iure fugit, dicta facilis totam sit earum magnam vero est? Architecto
+            totam cum repellendus non, autem omnis amet commodi perspiciatis voluptatem voluptatibus facilis soluta in
+            suscipit id reprehenderit, vero perferendis tenetur? Pariatur recusandae et tempora debitis veritatis iure
+            ad accusamus ratione similique soluta placeat beatae nihil, aliquid, dicta nobis, doloribus facilis
+            voluptatum. Dignissimos, ex amet est explicabo quae laborum aliquid ullam, suscipit sed soluta cupiditate
+            eligendi aperiam nulla, adipisci eum delectus possimus pariatur unde facere ea? Ad voluptatibus delectus
+            incidunt quam rerum illum minus consequuntur quisquam! Praesentium dolor molestias est quam delectus aut
+            tenetur rerum tempore saepe consectetur natus modi minus laborum ullam iste omnis autem at ex, nulla sit
+            distinctio. Eveniet?
+        </p>
+    </div>
+
+    <script>
+        const form = document.querySelector('form');
+        const urlInput = document.getElementById('video-url');
+        const qualitySelect = document.getElementById('quality');
+        const queueSection = document.querySelector('section.mt-8');
+
+        // 1. Form Submit होने पर नया डाउनलोड कार्ड बनाना
+        form.addEventListener('submit', function (e) {
+            e.preventDefault(); // पेज रीलोड रोकना
+
+            const url = urlInput.value.trim();
+            const quality = qualitySelect.value;
+            if (!url) return;
+
+            // URL से एक साफ नाम निकालना या डिफ़ॉल्ट नाम देना
+            let videoTitle = "YouTube_Video_" + Math.floor(Math.random() * 1000) + ".mp4";
+            try {
+                const urlObj = new URL(url);
+                if (urlObj.searchParams.get('v')) {
+                    videoTitle = `Video_${urlObj.searchParams.get('v')}_${quality}.mp4`;
+                }
+            } catch (err) { }
+
+            createDownloadCard(videoTitle, quality);
+            urlInput.value = ''; // इनपुट बॉक्स खाली करना
+        });
+
+        // 2. नया कार्ड बनाने और लाइव प्रोग्रेस चलाने का फंक्शन
+        function createDownloadCard(title, quality) {
+            const article = document.createElement('article');
+            article.className = "bg-zinc-900 border border-zinc-800 rounded-2xl p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5 transition-all duration-300";
+
+            article.innerHTML = `
+                <!-- Quality Thumbnail -->
+                <div class="w-full sm:w-28 h-16 bg-zinc-800 rounded-xl flex items-center justify-center text-xs font-mono text-rose-400 font-bold shrink-0">
+                    ${quality}
+                </div>
+
+                <!-- Title & Progress -->
+                <div class="w-full flex-1 space-y-2">
+                    <h3 class="text-white font-semibold text-sm break-all">${title}</h3>
+                    <div class="w-full h-2 bg-zinc-800 rounded-full overflow-hidden">
+                        <div class="progress-bar w-0 h-full bg-rose-600 transition-all duration-300"></div>
+                    </div>
+                    <p class="stats-text text-xs text-zinc-400 font-mono">aria2c 16x • Starting... • 0%</p>
+                </div>
+
+                <!-- Pause / Resume Button -->
+                <div class="w-full sm:w-auto flex justify-end">
+                    <button class="action-btn bg-zinc-800 hover:bg-zinc-700 text-xs text-zinc-300 px-3 py-1.5 rounded-lg transition">
+                        Pause
+                    </button>
+                </div>
+            `;
+
+            // 'Active Downloads' हेडिंग के ठीक नीचे नया कार्ड जोड़ें
+            queueSection.querySelector('h2').after(article);
+
+            const progressBar = article.querySelector('.progress-bar');
+            const statsText = article.querySelector('.stats-text');
+            const actionBtn = article.querySelector('.action-btn');
+
+            let progress = 0;
+            let isPaused = false;
+
+            // Pause / Resume बटन का लॉजिक
+            actionBtn.addEventListener('click', () => {
+                if (progress >= 100) return;
+                isPaused = !isPaused;
+                actionBtn.textContent = isPaused ? 'Resume' : 'Pause';
+                actionBtn.classList.toggle('text-amber-400', isPaused);
+                if (isPaused) {
+                    statsText.textContent = `aria2c 16x • Paused • ${progress}%`;
+                }
+            });
+
+            // हर 400ms में डाउनलोड प्रोग्रेस बढ़ाना
+            const interval = setInterval(() => {
+                if (isPaused) return;
+
+                const increment = Math.floor(Math.random() * 8) + 3; // 3% से 10% की बढ़त
+                progress = Math.min(progress + increment, 100);
+                const fakeSpeed = (Math.random() * (19.5 - 8.2) + 8.2).toFixed(1);
+
+                progressBar.style.width = `${progress}%`;
+
+                if (progress < 100) {
+                    statsText.textContent = `aria2c 16x • ${fakeSpeed} MB/s • ${progress}%`;
+                } else {
+                    clearInterval(interval);
+                    progressBar.classList.replace('bg-rose-600', 'bg-emerald-500');
+                    statsText.textContent = `aria2c 16x • Completed • 100%`;
+                    statsText.classList.replace('text-zinc-400', 'text-emerald-400');
+                    actionBtn.textContent = 'Done ✓';
+                    actionBtn.className = "bg-emerald-500/20 text-emerald-400 text-xs px-3 py-1.5 rounded-lg cursor-default";
+                }
+            }, 400);
+        }
+    </script>
+</body>
+
+</html>
